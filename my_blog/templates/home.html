@@ -1,0 +1,15 @@
+{% include 'master.html' %}
+
+{% block content %}
+    <div class="Posts">
+    {% for post in posts %}
+        <div class="post">
+            <a href="/post/{{ post.pk }}"><h3>{{ post.title }}</h3></a>
+            <h6>{{ post.date }}</h6>
+            {% include 'partials/category.html' %}
+            <P>{{ post.body | truncatewords:20 }}</P>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
+

@@ -1,0 +1,11 @@
+{% include 'master.html' %}
+
+{% block content %}
+    <div class="post">
+    <h3>{{ post.title }}</h3>
+    <h6>{{ post.date }}</h6>
+    {% include 'partials/category.html' %}
+    <P>{{ post.body }}</P>
+</div>
+{% endblock %}
+
