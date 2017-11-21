@@ -1,0 +1,60 @@
+div.container-fluid{
+  background:initial;
+  text-align:center;
+}
+
+nav.navbar.navbar-default{
+  align-items:center;
+  align-content:center;
+  align-self:center;
+}
+
+a.navbar-brand.navbar-link{
+  align-content:center;
+  align-items:center;
+  align-self:center;
+}
+
+nav.navbar.navbar-default{
+  align-items:center;
+  align-content:center;
+  align-self:center;
+}
+
+li{
+  color:green;
+}
+
+a.bg-success{
+  font-size:20px;
+}
+
+ul.nav.navbar-nav.navbar-right{
+  background:green;
+  background-color:green;
+}
+
+p.profile-name-card{
+  margin-top:10px;
+}
+
+a.navbar-brand.navbar-link{
+  color:green;
+}
+
+a.bg-success{
+  color:green;
+}
+
+a.bg-success{
+  font-size:small;
+}
+
+a.text-success.bg-danger{
+  background:rgb(104, 145, 162);
+}
+
+a.text-success.bg-danger{
+  color:white;
+}
+

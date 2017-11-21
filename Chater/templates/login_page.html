@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'bootstrap/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/bootstrap/js/bootstrap.min.js' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/Bootstrap-Payment-Form.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/Google-Style-Login.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/Mockup-iPhone-6.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/Pretty-Footer.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/Pretty-Header.css.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/styles.css.css' %}" rel="stylesheet">
+
+    <link href="{% static 'bootstrap/js/jquery.min.js' %}" rel="stylesheet">
+
+    <title>login_page</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#"><strong><em>Chater </em></strong></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active" role="presentation"><a href="#"><strong>Sing Up</strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="login-card">
+        <p class="text-success profile-name-card"><strong>Log in to Chater</strong></p>
+        <form class="form-signin"><span class="reauth-email"> </span>
+            <input class="form-control" type="email" required="" placeholder="Mobile Number" autofocus="" id="inputEmail">
+            <input class="form-control" type="password" required="" placeholder="Password" id="inputPassword">
+            <div class="checkbox">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox">Remember me</label>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Sign in</button>
+        </form><a href="#" class="forgot-password">Forgot your password?</a></div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
