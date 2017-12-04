@@ -1,0 +1,89 @@
+{% extends 'master_templates/master.html' %}
+
+
+{% block master_page %}
+
+    {% load static %}
+
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand navbar-link"
+                                          href="{% url 'HomePage' %}"><strong><em>Chater </em></strong></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active" role="presentation"><a href="{% url 'logout' %}"><strong>Log Out</strong></a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <!--<h1>Welcome {{ user }}</h1> -->
+
+
+        <div style="overflow-y: scroll;width: 500px" class="col-sm-3 col-sm-offset-4 frame">
+
+            <ul style="list-style-type: none;">
+
+                {% for conversation in conversations %}
+                    {% if conversation.type_id == 1 %}
+                        <li style="width:100%">
+                            <div class="msj macro">
+                                <div class="text text-l">
+                                    <p>{{ conversation.massage }}</p>
+                                    <p>
+                                        <small>Today</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    {% endif %}
+
+                    {% if conversation.type_id == 2 %}
+                        <li style="width:100%">
+                            <div class="msj-rta macro">
+                                <div class="text text-r">
+                                    <p>{{ conversation.massage }}</p>
+                                    <p>
+                                        <small>Today</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+
+                    {% endif %}
+
+                {% endfor %}
+
+
+            </ul>
+
+            <!--<div>
+                <div class="msj-rta macro" style="margin:auto;margin-top: 100px;">
+                    <div class="text text-r" style="background:whitesmoke !important">
+
+                    </div>
+                </div>
+            </div>-->
+        </div>
+        <div class="Container">
+            <form method="POST">
+                <input class="mytext" name="massage" id="massage" placeholder="Type a message"/>
+                <input style="color: white" type="submit" value="Sent" class="btn">
+                {% csrf_token %}
+            </form>
+        </div>
+
+    </div>
+
+
+
+
+
+
+{% endblock %}

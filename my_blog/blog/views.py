@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from blog.models import Post_DB
+from django.shortcuts import get_object_or_404
+from django.core.urlresolvers import reverse
+
+from .form_ import UserInput
 
 def blog_home(request):
 
@@ -16,3 +20,4 @@ def blog_home(request):
 def blog_post(request, pk):
     post = Post_DB.objects.get(pk=pk)
     return render(request,'post.html',{'post':post})
+

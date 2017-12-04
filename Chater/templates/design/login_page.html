@@ -1,0 +1,40 @@
+{% extends 'master_templates/master.html' %}
+
+{% block master_page %}
+
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand navbar-link"
+                                          href="{% url 'HomePage' %}"><strong><em>Chater </em></strong></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active" role="presentation"><a href="{% url 'registration_view' %}"><strong>Sing Up</strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="login-card">
+        <p class="text-success profile-name-card"><strong>Log in to Chater</strong></p>
+        <form class="form-signin" method="post"><span class="reauth-email"> </span>
+
+
+            <!-- Mobile Number Edit Text form -->
+            <input class="form-control" name="username" id="username" type="text" placeholder="Username">
+
+            <!-- Password edit text form -->
+            <input class="form-control" name="password" id="password" type="password" placeholder="password">
+
+            <!-- Remember me checkbox -->
+            <p style="color: red; text-align: center;" >{{ massage }}</p>
+            <!-- Login Button -->
+            <input type="submit" value="Login" class="btn btn-info btn-block">
+            {% csrf_token %}
+        </form>
+
+    </div>
+
+{% endblock %}
+
