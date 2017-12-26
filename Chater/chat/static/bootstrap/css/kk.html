@@ -1,0 +1,196 @@
+<?php
+	include('../process/dbconfig.php');
+	$fixed ="navbar-fixed-top";
+
+	$user=$_SESSION['login_user'];
+	if(strlen($user)>0){
+		$SQL = $conn->query("SELECT * FROM user_info WHERE username='$user' ");
+		$getROW = $SQL->fetch_array();
+	}
+?>
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Global Bd Wallet </title>
+		<link rel="icon" type="image/jpg" href="../images/tab-logo.jpg" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Changa|Roboto" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/custom.js"></script>
+		<script src="../js/smooth-scroll.js"></script>
+
+		<style type="text/css">
+			.main_pro_sec{
+			margin-top:61px;
+			}
+			.main_pro{
+			margin-top:10px;
+			}
+			.main_pro_cont{
+				background-color: rgb(251, 251, 251);
+				padding-top: 20px;
+				border-radius: 5px;
+				box-shadow: inset -5px 5px 5px #d6d6d6, inset 5px 5px 5px #d6d6d6;
+			}
+
+			.sidbar_pro{
+				background-color: #c2c2c212;
+				padding: 0px;
+				margin: 0px;
+				box-shadow: inset -3px 0px 10px #d6d6d6;
+				position: fixed;
+				z-index: 2;
+			}
+			.sidbar_pro ul{
+			padding:0px;
+			margin:0px;
+
+			}
+			.sidbar_pro ul li{
+			list-style:none;
+			border-top:1px solid #ddd;
+			border-bottom:1px solid #ddd;
+			padding:20px;
+			}
+
+			.sidbar_pro ul li:hover{
+			    background: #cccccc0d;
+				box-shadow: 0px 5px 3px #cccccc4d, 0px -5px 3px #cccccc4d;
+				border: none;
+			}
+			.sidbar_pro ul li a{
+			color:#000;
+			}
+			.sidbar_pro ul li a:hover{
+			color:#000;
+			text-decoration:none;
+			}
+            .mbl{
+            display:none;
+            }
+            .dsk{
+            display:block;
+            }
+			@media screen and (max-width:766px){
+			.sidbar_pro ul li{
+			list-style:none;
+			float:left;
+			border-left:1px solid #ddd;
+			border-right:1px solid #ddd;
+			border-top:1px solid #ddd;
+			border-bottom:1px solid #ddd;
+            padding-left:8%;
+            padding-right:9%;
+
+			}
+
+			.sidbar_pro{
+			background-color:rgb(54, 39, 76);
+			padding:0px;
+			margin:0px;
+			height:60px !important;
+			overflow:hidden;
+			position:relative;
+			}
+            .mbl{
+            display:block;
+
+            }
+            .dsk{
+            display:none;
+            }
+
+			.main_pro_sec{
+
+			}
+			}
+
+			@media screen and (max-width:563px){
+            .sidbar_pro ul li{
+            padding-left:9%;
+            padding-right:9%;
+			}
+            }
+            @media screen and (max-width:468px){
+            .sidbar_pro ul li{
+            padding-left:8%;
+            padding-right:8%;
+			}
+            }
+
+            @media screen and (max-width:300px){
+            .sidbar_pro ul li{
+            padding-left:6%;
+            padding-right:6.9%;
+			}
+            }
+		</style>
+	</head>
+	<body onload="sideheide()">
+		<?php include('header.php') ?>
+
+		<div class="container-fluid main_pro_sec">
+			<div class="row">
+				<div id="sidbar_pro" class="col-md-2 col-sm-2 sidbar_pro">
+
+					<ul>
+						<li class="dsk"><a href="profile?page=userprofile"><center> <img class="profile-img" src="../prof_image/<?php echo $getROW['profie_pic'];  ?>" alt=""></center><br /><center><strong><?php echo $getROW['fullname']; ?></strong></center></a></li>
+						<li class="dsk"><a href="profile?page=userbuy">Your Buy History</a></li>
+						<li class="history mbl"><a href="profile?page=userbuy"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+						<li class="dsk"><a href="profile?page=usersell">Your Sell History</a></li>
+						<li class="history mbl"><a href="profile?page=usersell"><i class="fa fa-handshake-o" aria-hidden="true"></i></a></li>
+						<li class="dsk"><a href="profile?page=userexchange">Your Exchange History</a></li>
+						<li class="history mbl"><a href="profile?page=user_exchange"><i class="fa fa-exchange" aria-hidden="true"></i></a></li>
+						<li class="dsk"><a href="profile?page=usr_ref">Your Refferal</a></li>
+						<li class="history mbl"><a href="profile?page=usr_ref"><i class="fa fa-users" aria-hidden="true"></i></a></li>
+						<li class="dsk"><a href="profile?page=usr_settings">Setting</a></li>
+						<li class="history mbl"><a href="profile?page=usr_settings"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+					</ul>
+
+				</div>
+				<div class="col-md-12 main_pro">
+					<div class="container-fluid">
+						<div class="row">
+							<?php
+									if(isset($_GET['page'])){
+										$page=$_GET['page'].".php";
+									}
+									else{
+										$page="userprofile.php";
+									}
+
+									if(file_exists($page)){
+										include $page;
+									}
+									else{
+										echo "Wellcome Admin";
+									}
+
+
+								?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			function sideheide(){
+				var x =  screen.height-60 + "px";
+				document.getElementById("sidbar_pro").style.height = x;
+			}
+		</script>
+	</body>

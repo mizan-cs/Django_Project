@@ -1,0 +1,153 @@
+{% extends 'primary/master.html' %}
+
+{% block master_page %}
+
+    <div class="container">
+
+        <form class="well form-horizontal" action=" " method="POST" id="contact_form">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Sing Up!</legend>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">First Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="first_name" name="first_name" placeholder="First Name" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Last Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="last_name" name="last_name" placeholder="Last Name" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">E-Mail</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input id="email" name="email" placeholder="E-Mail Address" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Phone #</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input id="mobile_number" name="phone" placeholder="+8801234567890" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">University/College</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
+                            <input id="institute" name="institute" placeholder="University/College" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Address</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input id="address" name="address" placeholder="Address" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">City</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input id="city" name="city" placeholder="city" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- radio checks -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Gender</label>
+                    <div class="col-md-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="hosting" value="Male"/> Male
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="hosting" value="Female"/> Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Password</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="password" name="password" class="form-control" type="password">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Confirm Password</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="confirm_password" name= "confirm_password" class="form-control" type="password">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-warning">Register <span
+                                class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </div>
+
+            </fieldset>
+            {% csrf_token %}
+        </form>
+    </div>
+    </div><!-- /.container -->
+
+
+
+
+{% endblock %}
